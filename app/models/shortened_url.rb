@@ -4,10 +4,10 @@ class ShortenedUrl < ActiveRecord::Base
   before_create :create_short_url
   # Remember to create a migration!
 
-  #Intento de validaciones xD
+  #validaciones correctas :D
   validates :long_url, presence: true, uniqueness: true, format: { with: URI.regexp }
 
-
+#Intento de validaciones xD
   #def valid?(url)
   #  uri = URI.parse(url)
   #  uri.kind_of?(URI::HTTP)
@@ -21,5 +21,7 @@ class ShortenedUrl < ActiveRecord::Base
   private
   def create_short_url
     #aquí debería crear la url corta pero aún no sabo como xD jajajaja
+    short_url = "Yuka" + (1..6).map{ ('a'..'z').to_a[rand(26)]}.join
+
   end
 end
