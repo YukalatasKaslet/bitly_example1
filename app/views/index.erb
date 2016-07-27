@@ -10,12 +10,17 @@
     <input type="submit" value="short!">
   </form>
 
+  <% if @error %>
+    <p> URL no válida <p>
+    <br>
+  <% end %>
+
   <% if @urls%>
     <% @urls.each do |url| %>
       <p>
-      long_url:  <%= url.long_url %>
+      <strong>long_url:</strong>  <%= url.long_url %>
       <br>
-      short_url: <%= url.short_url %>
+      <strong>short_url:</strong> <%= url.short_url %>
       </p>
       <% end %>
   <%end%>
