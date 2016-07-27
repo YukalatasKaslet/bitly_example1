@@ -10,4 +10,13 @@
     <input type="submit" value="short!">
   </form>
 
-  
+  <% if @urls%>
+    <% @urls.each do |url| %>
+      <p>
+      long_url:  <%= url.long_url %>
+      <br>
+      short_url: <%= url.short_url %>
+      </p>
+      <% end %>
+  <%end%>
+
