@@ -5,7 +5,7 @@ class ShortenedUrl < ActiveRecord::Base
 
   #validaciones correctas :D
   validates :long_url, presence: true, uniqueness: true, format: { with: URI.regexp }
-  validates :short_url, presence: true, uniqueness: true
+  
 
 #Intento de validaciones xD
   #def valid?(url)

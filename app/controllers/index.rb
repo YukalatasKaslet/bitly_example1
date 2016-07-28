@@ -33,6 +33,8 @@ get '/:short_url' do
   short_url = params[:short_url]
   url = ShortenedUrl.find_by(short_url: short_url)
   if url
+    url.visit_count += 1
+    url.save
     redirect to( url.long_url )
   else
     erb :error
